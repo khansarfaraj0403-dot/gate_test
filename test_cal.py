@@ -1,6 +1,6 @@
 import pytest
 from calc import add,mul,sub,div
-def test_add(a,b):
+def test_add():
     assert(10,20) == 30
 def test_sub():
     assert sub(10, 5) == 5
