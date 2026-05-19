@@ -1,1 +1,25 @@
+name: workflow1
+on:
+    push:
+        branches:
+        - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: chekckout code
+          uses: actions/checkout@v2
+
+        - name: install work dependences
+          run: pip install -r requirments.txt
+
+        - name: run test case
+          run: pytest --cov=calc --cov-report=term --cov-fail-under=80
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+        - name: print deploy message
+          run: echo"deploy succesfull"
+
 
