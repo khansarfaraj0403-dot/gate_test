@@ -20,6 +20,6 @@ jobs:
         needs: build
         steps:
         - name: print deploy message
-          run: echo"deploy succesfull"
+          run: echo "deploy succesfull"
 
 
